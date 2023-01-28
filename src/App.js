@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Paper, Box, Container, Stack } from "@mui/material";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Container maxWidth="md">
+        <Paper variant="outlined" sx={{ mt: 5 }}>
+          <Box p={2}>
+            <Stack direction="row" justifyContent="space-between">
+              <Box>LOGO</Box>
+              <Box>FILTER</Box>
+            </Stack>
+          </Box>
+        </Paper>
+      </Container>
+    </>
   );
 }
 
