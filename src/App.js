@@ -8,11 +8,14 @@ import {
   InputLabel,
   Select,
   MenuItem,
+  Typography,
+  Divider,
 } from "@mui/material";
 import Logo from "./assets/logo.png";
 
 function App() {
   const [filterValue, setFilterValue] = useState(1);
+  const [todoItems, setTodoItems] = useState([]);
 
   const handleChange = (event) => {
     setFilterValue(event.target.value);
@@ -20,8 +23,9 @@ function App() {
   return (
     <>
       <Container maxWidth="md">
-        <Paper variant="outlined" sx={{ mt: 5 }}>
-          <Box p={2}>
+        <Paper variant="outlined" sx={{ mt: 5, p: 2 }}>
+        {/* Header section */}
+          <Box>
             <Stack
               direction="row"
               justifyContent="space-between"
@@ -47,6 +51,14 @@ function App() {
                 </FormControl>
               </Box>
             </Stack>
+            <Divider sx={{mt: 3}}/>
+          </Box>
+
+          {/* Todo Items List */}
+          <Box py={4}>
+              {todoItems.length ? todoItems.map((todoItem) => {
+                return <p>{todoItem}</p>;
+              }) : <Typography sx={{color: "red"}} align="center">Nothing yet</Typography>}
           </Box>
         </Paper>
       </Container>
