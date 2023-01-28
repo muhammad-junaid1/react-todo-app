@@ -14,7 +14,7 @@ function App() {
     clickedItem: {},
   });
 
-  const handleChange = (event) => {
+  const handleChangeFilter = (event) => {
     setFilterValue(event.target.value);
   };
 
@@ -67,13 +67,14 @@ function App() {
     <>
       <Container maxWidth="md">
         <Paper variant="outlined" sx={{ mt: 5, p: 2 }}>
-          <Header filterValue={filterValue} handleChange={handleChange} />
+          <Header filterValue={filterValue} handleChangeFilter={handleChangeFilter} />
           <TodoItems
             todoItems={todoItems}
             editBtnClick={editBtnClick}
             setTodoItems={setTodoItems}
             setEditBtnClick={setEditBtnClick}
             setInputValue={setInputValue}
+            filterValue={filterValue}
           />
           <TodoForm
           todoItems={todoItems}

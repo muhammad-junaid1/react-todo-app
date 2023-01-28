@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import Logo from "../assets/logo.png";
 
-const Header = ({filterValue, handleChange}) => {
+const Header = ({filterValue, handleChangeFilter}) => {
     return (
         <>
           <Box>
@@ -29,7 +29,7 @@ const Header = ({filterValue, handleChange}) => {
                     labelId="select-label"
                     value={filterValue}
                     label="Age"
-                    onChange={handleChange}
+                    onChange={handleChangeFilter}
                   >
                     <MenuItem value={1}>All</MenuItem>
                     <MenuItem value={2}>Completed</MenuItem>

@@ -5,6 +5,7 @@ import {
   TableRow,
   TableCell,
   TableBody,
+  Typography
 } from "@mui/material";
 import TodoItem from "./TodoItem.component";
 
@@ -22,11 +23,15 @@ const TodoItemsTable = ({ todoItems, editBtnClick, setTodoItems, setEditBtnClick
               <TableCell align="center">Actions</TableCell>
             </TableRow>
           </TableHead>
+          {todoItems.length ?
           <TableBody>
             {todoItems.map((todoItem, index) => (
                 <TodoItem key={todoItem.id} setInputValue={setInputValue} editBtnClick={editBtnClick} setEditBtnClick={setEditBtnClick} item={todoItem} setTodoItems={setTodoItems} index={index}/>
             ))}
-          </TableBody>
+            </TableBody> : <Typography sx={{ color: "red", pt: 4 }} align="center">
+                Items Not Found
+          </Typography>
+          }
         </Table>
       </TableContainer>
     </>
