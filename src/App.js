@@ -67,7 +67,7 @@ function App() {
     <>
       <Container maxWidth="md">
         <Paper variant="outlined" sx={{ mt: 5, p: 2 }}>
-          <Header filterValue={filterValue} handleChangeFilter={handleChangeFilter} />
+          <Header todoItems={todoItems} setTodoItems={setTodoItems} filterValue={filterValue} handleChangeFilter={handleChangeFilter} />
           <TodoItems
             todoItems={todoItems}
             editBtnClick={editBtnClick}

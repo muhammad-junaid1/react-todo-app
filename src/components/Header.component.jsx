@@ -6,10 +6,16 @@ import {
   Select,
   MenuItem,
   Divider,
+  Button,
+  Typography,
 } from "@mui/material";
 import Logo from "../assets/logo.png";
+import { Delete as DeleteIcon } from "@mui/icons-material";
 
-const Header = ({filterValue, handleChangeFilter}) => {
+const Header = ({filterValue, handleChangeFilter, todoItems, setTodoItems}) => {
+  const deleteAll = () => {
+    setTodoItems([]);
+  }
     return (
         <>
           <Box>
@@ -22,6 +28,12 @@ const Header = ({filterValue, handleChangeFilter}) => {
                 <img src={Logo} alt="Logo" width={60} />
               </Box>
               <Box>
+                {todoItems.length ? <Button onClick={deleteAll} color="error" variant="contained" sx={{textTransform: "none", mr: 4}} title="Delete All">
+                  <Stack direction="row" alignItems="center">
+                    <DeleteIcon/>
+                    <Typography>Delete All</Typography>
+                  </Stack>
+                </Button> : ""}
                 <FormControl autoWidth size="small">
                   <InputLabel id="select-label">Filter</InputLabel>
                   <Select
