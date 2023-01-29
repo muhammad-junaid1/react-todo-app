@@ -106,7 +106,7 @@ const TodoItem = ({
                 <DoneIcon />
               </IconButton>
             ) : (
-              <IconButton>
+              <IconButton disabled>
                 <DoneAllIcon />
               </IconButton>
             )}
