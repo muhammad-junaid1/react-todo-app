@@ -10,17 +10,21 @@ import {
 import TodoItem from "./TodoItem.component";
 
 const TodoItemsTable = ({ todoItems, editBtnClick, setTodoItems, setEditBtnClick, setInputValue}) => {
+  const tableCellStyles = {
+    color: "white",
+    bgcolor: "black"
+  };
   return (
     <>
       <TableContainer>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <Table sx={{ minWidth: 650 }} aria-label="TodoItems table">
           <TableHead>
             <TableRow>
-              <TableCell align="center">#</TableCell>
-              <TableCell align="center">Item</TableCell>
-              <TableCell align="center">Date</TableCell>
-              <TableCell align="center">Status</TableCell>
-              <TableCell align="center">Actions</TableCell>
+              <TableCell sx={tableCellStyles} align="center">#</TableCell>
+              <TableCell sx={tableCellStyles} align="center">Item</TableCell>
+              <TableCell sx={tableCellStyles} align="center">Date</TableCell>
+              <TableCell sx={tableCellStyles} align="center">Status</TableCell>
+              <TableCell sx={tableCellStyles} align="center">Actions</TableCell>
             </TableRow>
           </TableHead>
           {todoItems.length ?

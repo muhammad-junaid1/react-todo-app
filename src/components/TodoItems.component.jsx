@@ -23,7 +23,7 @@ const TodoItems = ({
   }, [filterValue, todoItems]);
   return (
     <>
-      <Box pb={4}>
+      <Box mb={1} pb={2} maxHeight={380} sx={{overflowY: "scroll"}}>
         {todoItems.length ? (
           <TodoItemsTable
             setInputValue={setInputValue}

@@ -50,12 +50,13 @@ const TodoItem = ({
 
   const doneTodoItem = () => {
     setTodoItems((todoItems) => {
-      return todoItems.filter((todoItem) => todoItem.id !== item.id);
-    });
-    setTodoItems((todoItems) => {
-      return [...todoItems, {
-        ...item, status: "completed"
-      }];
+      return todoItems.map((todoItem) => {
+        if(todoItem.id === item.id) {
+          return {...todoItem, status: "completed"};
+        } else {
+          return todoItem;
+        }
+      })
     });
     setEditBtnClick({
         isClicked: false,
