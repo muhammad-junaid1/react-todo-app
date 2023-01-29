@@ -57,7 +57,7 @@ function App() {
         "active",
       );
       setTodoItems((todoItems) => {
-        return [...todoItems, newTodoItem];
+        return [newTodoItem, ...todoItems];
       });
     }
     setInputValue("");
